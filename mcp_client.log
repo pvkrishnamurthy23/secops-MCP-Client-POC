@@ -1,0 +1,47 @@
+2025-08-08 13:29:09,325 - MCPClient - INFO - Initializing application. Loading secrets from AWS Secrets Manager...
+2025-08-08 13:29:11,858 - MCPClient - INFO - Fetching secrets from AWS Secrets Manager: ipl/secops/db/openai (region=us-east-1)
+2025-08-08 13:29:11,858 - MCPClient - ERROR - Startup failed while loading secrets
+Traceback (most recent call last):
+  File "c:\secops-MCP-Client\streamlit_app\app.py", line 64, in <module>
+    secrets = get_secret()
+              ^^^^^^^^^^^^
+  File "c:\secops-MCP-Client\streamlit_app\app.py", line 51, in get_secret
+    get_secret_value_response = client.get_secret_value(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\secops-MCP-Client\venv\Lib\site-packages\botocore\client.py", line 602, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\secops-MCP-Client\venv\Lib\site-packages\botocore\context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\secops-MCP-Client\venv\Lib\site-packages\botocore\client.py", line 1060, in _make_api_call
+    http, parsed_response = self._make_request(
+                            ^^^^^^^^^^^^^^^^^^^
+  File "c:\secops-MCP-Client\venv\Lib\site-packages\botocore\client.py", line 1084, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\secops-MCP-Client\venv\Lib\site-packages\botocore\endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\secops-MCP-Client\venv\Lib\site-packages\botocore\endpoint.py", line 196, in _send_request
+    request = self.create_request(request_dict, operation_model)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\secops-MCP-Client\venv\Lib\site-packages\botocore\endpoint.py", line 132, in create_request
+    self._event_emitter.emit(
+  File "c:\secops-MCP-Client\venv\Lib\site-packages\botocore\hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\secops-MCP-Client\venv\Lib\site-packages\botocore\hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\secops-MCP-Client\venv\Lib\site-packages\botocore\hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+               ^^^^^^^^^^^^^^^^^
+  File "c:\secops-MCP-Client\venv\Lib\site-packages\botocore\signers.py", line 108, in handler
+    return self.sign(operation_name, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\secops-MCP-Client\venv\Lib\site-packages\botocore\signers.py", line 200, in sign
+    auth.add_auth(request)
+  File "c:\secops-MCP-Client\venv\Lib\site-packages\botocore\auth.py", line 422, in add_auth
+    raise NoCredentialsError()
+botocore.exceptions.NoCredentialsError: Unable to locate credentials

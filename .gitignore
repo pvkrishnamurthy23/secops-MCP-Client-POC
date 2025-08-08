@@ -1,0 +1,7 @@
+/.env
+File/
+Test/
+streamlit_app/chat_copy.py
+mcp_servers/postgres_server/apiServer.py
+mcp_servers/postgres_server/mcpServer.py
+venv/

@@ -23,7 +23,7 @@ COPY . .
 RUN mkdir -p /app/logs
 
 # Expose Streamlit port
-EXPOSE 8501
+EXPOSE 80
 
 # Set environment variables
 ENV PYTHONPATH=/app
